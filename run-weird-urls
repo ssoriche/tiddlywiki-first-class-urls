@@ -12,6 +12,12 @@ if [[ $i -eq 20 ]] ; then
     exit 1
 fi
 
+echo 'local refs:'
+git for-each-ref
+
+echo 'remote refs:'
+git ls-remote origin
+
 export ELECTRON_ENABLE_LOGGING=1
 cat weird-urls.txt | while read url ; do
     # XXX if we already have a record for $url, skip
