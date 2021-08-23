@@ -20,8 +20,6 @@ trap 'rm -rf "$temp_repo"' EXIT
 
 set -x
 
-git remote -v
-
 git init "$temp_repo"
 git -C "$temp_repo" fetch https://github.com/$GITHUB_REPOSITORY $WEIRD_REF:tmp-ref
 git -C "$temp_repo" checkout tmp-ref
