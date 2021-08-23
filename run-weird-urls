@@ -43,4 +43,4 @@ cat weird-urls.txt | while read url ; do
     git -c user.name=Actions -c user.email=noreply@nodomain.com -C "$temp_repo" commit -m "Added debug information for $url"
 done
 
-git -C "$temp_repo" push "https://x-access-token@$GITHUB_TOKEN:github.com/$GITHUB_REPOSITORY" HEAD:$WEIRD_REF --dry-run
+git -C "$temp_repo" push "https://x-access-token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY" HEAD:$WEIRD_REF --dry-run
