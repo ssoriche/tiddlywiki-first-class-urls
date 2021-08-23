@@ -20,7 +20,7 @@ trap 'rm -rf "$temp_repo"' EXIT
 
 set -x
 
-git push origin refs/heads/weird:test-ref
+git push origin HEAD:test-ref
 
 git init "$temp_repo"
 git -C "$temp_repo" fetch https://github.com/$GITHUB_REPOSITORY $WEIRD_REF:tmp-ref
