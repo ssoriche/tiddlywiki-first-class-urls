@@ -21,6 +21,8 @@ trap 'rm -rf "$temp_repo"' EXIT
 # XXX DEBUG
 GITHUB_REPOSITORY=hoelzro/tiddlywiki-first-class-urls
 
+set -x
+
 git init "$temp_repo"
 git -C "$temp_repo" fetch https://github.com/$GITHUB_REPOSITORY $WEIRD_REF:tmp-ref
 git -C "$temp_repo" checkout tmp-ref
